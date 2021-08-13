@@ -42,8 +42,7 @@ jupyter lab notebooks
 - [Converting a Paddle* Model]( https://github.com/openvinotoolkit/openvino/blob/35e6c51fc0871bade7a2c039a19d8f5af9a5ea9e/docs/MO_DG/prepare_model/convert_model/Convert_Model_From_Paddle.md)
 
 ### Notes and Disclaimers
-* Other names and brands may be claimed as the property of others.
-* Performance varies by use, configuration and other factors. Learn more at www.Intel.com/PerformanceIndex .
+* Performance varies by use, configuration and other factors. Learn more at [www.Intel.com/PerformanceIndex](www.Intel.com/PerformanceIndex).
 * Performance results are based on testing as of dates shown in configurations and may not reflect all publicly available updates.  See backup for configuration details.  
 * No product or component can be absolutely secure. 
 * Intel technologies may require enabled hardware, software or service activation.
