@@ -47,6 +47,5 @@ jupyter lab notebooks
 * Performance results are based on testing as of dates shown in configurations and may not reflect all publicly available updates.  See backup for configuration details.  
 * No product or component can be absolutely secure. 
 * Intel technologies may require enabled hardware, software or service activation.
-* No product or component can be absolutely secure. 
 * Your costs and results may vary. 
 * © Intel Corporation.  Intel, the Intel logo, and other Intel marks are trademarks of Intel Corporation or its subsidiaries.  Other names and brands may be claimed as the property of others. 
