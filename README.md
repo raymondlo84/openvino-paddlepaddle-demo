@@ -34,7 +34,7 @@ python -m ipykernel install --user --name openvino_env
 ```sh 
 #For Linux and Mac
 source openvino_env
-source /usr/local/bin/setupvar.sh
+source /usr/local/bin/setupvars.sh
 cd openvino-paddlepaddle-demo
 jupyter lab notebooks
 ```
