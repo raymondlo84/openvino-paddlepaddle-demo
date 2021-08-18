@@ -20,6 +20,7 @@ python3 -m venv openvino_env
 source openvino_env/bin/activate
 
 #install the dependencies
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 
 #install the kernel to Jupyter
