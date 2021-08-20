@@ -1,4 +1,6 @@
 opencv-python
 numpy
 jupyterlab
+pillow
+pyyaml
 
