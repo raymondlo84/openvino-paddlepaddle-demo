@@ -9,13 +9,56 @@ This repository provides a set of sample code that demostrate how to run PaddleP
 ## How to Setup
 
 ### Step 1 - Install OpenVINO from source
+- We install the OpenVINO source library to the openvino/openvino_dev directory by default. 
 
-- To build from source, follow the build instructions in the [Official OpenVINO GitHub Wiki](https://github.com/openvinotoolkit/openvino/wiki/BuildingCode) with the  **Python API wrapper** (e.g., DENABLE_PYTHON=ON option in CMake) enabled.
-- This step will install the OpenVINO source library to the openvino_dev directory by default. 
+```
+https://github.com/openvinotoolkit/openvino.git
+cd openvino
+git submodule update --init --recursive
+```
 
-### Step 2 - Install Python Prerequisite for the Notebooks
+- Install the dependencies for OpenVINO source and Python
+- For Linux
+```
+chmod +x install_build_dependencies.sh
+./install_build_dependencies.sh
+pip install -r inference-engine/ie_bridges/python/src/requirements-dev.txt
+```
 
-- Create the virtual environment
+- For Mac
+```
+#install Python Dependencies
+pip install -r inference-engine/ie_bridges/python/src/requirements-dev.txt
+```
+
+- Compile the source code with Python Enabled
+
+```
+OPENVINO_BASEDIR = `pwd`
+mkdir build
+cd build
+
+cmake \
+-DCMAKE_BUILD_TYPE=Release \
+-DCMAKE_INSTALL_PREFIX="${OPENVINO_BASEDIR}/openvino_dist" \
+-DPYTHON_EXECUTABLE=$(which python3) \
+-DENABLE_MYRIAD=OFF \
+-DENABLE_VPU=OFF \
+-DENABLE_PYTHON=ON \
+-DNGRAPH_PYTHON_BUILD_ENABLE=ON \
+..
+
+make -j$(nproc); make install
+```
+
+### Step 2 - Setup the OpenVINO PaddlePaddle Sample from GitHub
+
+- Download from the GitHub
+```
+git clone https://github.com/raymondlo84/openvino-paddlepaddle-demo.git
+```
+
+- Create the virtual environment and install dependencies
 ```
 cd openvino-paddlepaddle-demo
 python3 -m venv openvino_env
@@ -29,12 +72,11 @@ pip install -r requirements.txt
 python -m ipykernel install --user --name openvino_env
 ```
 
-### Step 3 - Install PaddleDetection and Dependencies
+### Step 3 - Setup PaddleDetection and Dependencies
 Note: please make sure you are in the openvino-paddlepaddle-demo directory.
 ```sh
 git clone https://github.com/PaddlePaddle/PaddleDetection.git
-pip install -r cython
-pip install -r PaddeDetection/requirements.txt
+pip install -r PaddleDetection/requirements.txt
 python PaddeDetection/setup.py install
 ```
 
@@ -43,12 +85,15 @@ python PaddeDetection/setup.py install
 ```sh 
 #For Linux and Mac
 source openvino_env
-source openvino_dev/setupvars.sh
+source openvino/openvino_dist/bin/setupvars.sh
 cd openvino-paddlepaddle-demo
 jupyter lab notebooks
 ```
 
+Note: Please make sure you select the openvino_env as the Kernel in the Notebooks.
+
 ### References:
+- [Compiling OpenVINO from Source](https://github.com/openvinotoolkit/openvino/wiki/BuildingCode)
 - [Converting a Paddle* Model]( https://github.com/openvinotoolkit/openvino/blob/35e6c51fc0871bade7a2c039a19d8f5af9a5ea9e/docs/MO_DG/prepare_model/convert_model/Convert_Model_From_Paddle.md)
 
 ### Notes and Disclaimers
