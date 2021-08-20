@@ -11,11 +11,13 @@ This repository provides a set of sample code that demostrate how to run PaddleP
 ### Step 1 - Install OpenVINO from source
 
 - To build from source, follow the build instructions in the [Official OpenVINO GitHub Wiki](https://github.com/openvinotoolkit/openvino/wiki/BuildingCode) with the  **Python API wrapper** (e.g., DENABLE_PYTHON=ON option in CMake) enabled.
+- This step will install the OpenVINO source library to the openvino_dev directory by default. 
 
-### Step 2 - Install Python Prerequisite
+### Step 2 - Install Python Prerequisite for the Notebooks
 
 - Create the virtual environment
 ```
+cd openvino-paddlepaddle-demo
 python3 -m venv openvino_env
 source openvino_env/bin/activate
 
@@ -25,16 +27,23 @@ pip install -r requirements.txt
 
 #install the kernel to Jupyter
 python -m ipykernel install --user --name openvino_env
-
 ```
 
-### Step 3 - Execute the Jupyter Notebooks
+### Step 3 - Install PaddleDetection and Dependencies
+Note: please make sure you are in the openvino-paddlepaddle-demo directory.
+```sh
+git clone https://github.com/PaddlePaddle/PaddleDetection.git
+pip install -r cython
+pip install -r PaddeDetection/requirements.txt
+python PaddeDetection/setup.py install
+```
 
+### Step 4 - Execute the Jupyter Notebooks
 - Enable the virtual environment, and also the OpenVINO environment. Then, execute the jupyter lab.   
 ```sh 
 #For Linux and Mac
 source openvino_env
-source /usr/local/bin/setupvars.sh
+source openvino_dev/setupvars.sh
 cd openvino-paddlepaddle-demo
 jupyter lab notebooks
 ```
