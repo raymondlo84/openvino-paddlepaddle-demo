@@ -8,11 +8,20 @@ This repository provides a set of sample code that demostrate how to run PaddleP
 
 ## How to Setup
 
+### Step 0 - Clone the repository 
+
+Download this OpenVINO PaddlePaddle sample repository! Please note that we will install materials inside the openvino-paddlepaddle-demo folder as the default working directory.  
+```
+git clone https://github.com/raymondlo84/openvino-paddlepaddle-demo.git
+cd openvino-paddlepaddle-demo
+```
+
 ### Step 1 - Install OpenVINO from source
 We install the OpenVINO source library to the openvino/openvino_dev directory by default. 
 
+Download the OpenVINO Source
 ```
-https://github.com/openvinotoolkit/openvino.git
+git clone https://github.com/openvinotoolkit/openvino.git
 cd openvino
 git submodule update --init --recursive
 ```
@@ -37,7 +46,6 @@ Compile the source code with Python option enabled.
 OPENVINO_BASEDIR = `pwd`
 mkdir build
 cd build
-
 cmake \
 -DCMAKE_BUILD_TYPE=Release \
 -DCMAKE_INSTALL_PREFIX="${OPENVINO_BASEDIR}/openvino_dist" \
@@ -52,21 +60,16 @@ make -j$(nproc); make install
 ```
 
 ### Step 2 - Setup the OpenVINO PaddlePaddle Sample from GitHub
+Create the virtual environment and install dependencies. Now let's start from the working directory openvino-paddlepaddle-demo. 
 
-Download from the GitHub
-```
-git clone https://github.com/raymondlo84/openvino-paddlepaddle-demo.git
-```
-
-Create the virtual environment and install dependencies
-```
+```sh
 cd openvino-paddlepaddle-demo
 python3 -m venv openvino_env
 source openvino_env/bin/activate
 
 #install the dependencies
 python -m pip install --upgrade pip
-pip install -r requirements.txt
+pip install -r requirements.txt -i https://mirror.baidu.com/pypi/simple
 
 #install the kernel to Jupyter
 python -m ipykernel install --user --name openvino_env
@@ -76,8 +79,9 @@ python -m ipykernel install --user --name openvino_env
 Note: please make sure you are in the openvino-paddlepaddle-demo directory.
 ```sh
 git clone https://github.com/PaddlePaddle/PaddleDetection.git
-pip install -r PaddleDetection/requirements.txt
-python PaddeDetection/setup.py install
+pip install --upgrade -r PaddleDetection/requirements.txt -i https://mirror.baidu.com/pypi/simple
+#Optional
+#python PaddeDetection/setup.py install
 ```
 
 ### Step 4 - Execute the Jupyter Notebooks
