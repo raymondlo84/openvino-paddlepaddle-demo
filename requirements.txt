@@ -3,4 +3,6 @@ numpy
 jupyterlab
 pillow
 pyyaml
-
+cython
+paddlepaddle
+paddlehub
