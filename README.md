@@ -87,7 +87,8 @@ pip install --upgrade -r PaddleDetection/requirements.txt -i https://mirror.baid
 ```
 
 ### Step 4 - Execute the Jupyter Notebooks
-Enable the virtual environment, and also the OpenVINO environment. Then, execute the jupyter lab.   
+Enable the virtual environment, and also the OpenVINO environment. Then, execute the jupyter lab.  These steps are required if a new session is used (i.e., the terminal was closed or restarted).
+
 ```sh 
 #For Linux and Mac
 source openvino_env/bin/activate
