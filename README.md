@@ -90,9 +90,8 @@ pip install --upgrade -r PaddleDetection/requirements.txt -i https://mirror.baid
 Enable the virtual environment, and also the OpenVINO environment. Then, execute the jupyter lab.   
 ```sh 
 #For Linux and Mac
-source openvino_env
+source openvino_env/bin/activate
 source openvino/openvino_dist/bin/setupvars.sh
-cd openvino-paddlepaddle-demo
 jupyter lab notebooks
 ```
 
