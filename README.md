@@ -79,6 +79,8 @@ python -m ipykernel install --user --name openvino_env
 Note: please make sure you are in the openvino-paddlepaddle-demo directory.
 ```sh
 git clone https://github.com/PaddlePaddle/PaddleDetection.git
+cd PaddleDetection && git checkout release/2.1 && cd - 
+pip install paddlepaddle -i https://mirror.baidu.com/pypi/simple
 pip install --upgrade -r PaddleDetection/requirements.txt -i https://mirror.baidu.com/pypi/simple
 #Optional
 #python PaddeDetection/setup.py install
