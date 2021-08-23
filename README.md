@@ -96,6 +96,13 @@ cd openvino-paddlepaddle-demo
 jupyter lab notebooks
 ```
 
+### Sample Output
+PPYolo - [notebooks/101-object-detection-yolo](notebooks/101-object-detection-yolo). 
+![yolo-output](https://user-images.githubusercontent.com/1720147/130380687-0de42836-c959-4d86-908c-9034e0eda90a.png)
+MobilenetV3 Large - [notebooks/100-mobilenetv3](notebooks/100-mobilenetv3).
+![scrnli_8_22_2021_7-13-22 PM](https://user-images.githubusercontent.com/1720147/130380796-2a6084df-3753-4642-b5ff-32ba491bc944.png)
+
+
 Note: Please make sure you select the openvino_env as the Kernel in the Notebooks.
 
 ### References:
