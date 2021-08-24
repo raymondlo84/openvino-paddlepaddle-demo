@@ -19,14 +19,14 @@ cd openvino-paddlepaddle-demo
 ### Step 1 - Install OpenVINO from source
 We install the OpenVINO source library to the openvino/openvino_dev directory by default. 
 
-Download the OpenVINO Source
+Clone the OpenVINO source code from GitHub.
 ```
 git clone https://github.com/openvinotoolkit/openvino.git
 cd openvino
 git submodule update --init --recursive
 ```
 
-Install the dependencies for OpenVINO source and Python
+Install the dependencies for OpenVINO source and Python.
 - For Linux
 ```
 chmod +x install_build_dependencies.sh
@@ -40,7 +40,7 @@ pip install -r inference-engine/ie_bridges/python/src/requirements-dev.txt
 pip install -r inference-engine/ie_bridges/python/src/requirements-dev.txt
 ```
 
-Compile the source code with Python option enabled.
+Compile the source code with the Python option enabled.
 
 ```
 OPENVINO_BASEDIR = `pwd`
