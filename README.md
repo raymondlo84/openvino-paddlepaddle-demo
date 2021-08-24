@@ -43,7 +43,7 @@ pip install -r inference-engine/ie_bridges/python/src/requirements-dev.txt
 Compile the source code with the Python option enabled.
 
 ```
-OPENVINO_BASEDIR = `pwd`
+export OPENVINO_BASEDIR=`pwd`
 mkdir build
 cd build
 cmake \
