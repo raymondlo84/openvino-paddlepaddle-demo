@@ -6,3 +6,4 @@ pyyaml
 cython
 paddlepaddle
 paddlehub
+scikit-learn
