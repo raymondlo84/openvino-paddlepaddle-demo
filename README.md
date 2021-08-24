@@ -34,7 +34,7 @@ chmod +x install_build_dependencies.sh
 pip install -r inference-engine/ie_bridges/python/src/requirements-dev.txt
 ```
 
-- For Mac
+- For Mac. Please follow the official [guideline](https://github.com/openvinotoolkit/openvino/wiki/BuildingForMacOS) and also install [Brew](https://brew.sh/). 
 ```
 #install Python Dependencies
 pip install -r inference-engine/ie_bridges/python/src/requirements-dev.txt
