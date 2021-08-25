@@ -17,7 +17,15 @@ cd openvino-paddlepaddle-demo
 ```
 
 ### Step 1 - Install OpenVINO from source
-We install the OpenVINO source library to the openvino/openvino_dev directory by default. 
+Upcoming release **openvino 2022.1** will officially support PaddlePaddle. But users can experience this feature from OpenVINO github master branch in advance.
+
+We install the OpenVINO source library to the openvino/openvino_dist directory by default.  Users can change it by modifying the cmake option "CMAKE_INSTALL_PREFIX".
+
+For users who may have connection problem to github, may add this configuration to ~/.gitconfig :
+```
+    [url "git://github.com"]
+	      insteadOf="https://github.com"
+```
 
 Clone the OpenVINO source code from GitHub.
 ```
@@ -31,7 +39,7 @@ Install the dependencies for OpenVINO source and Python.
 ```
 chmod +x install_build_dependencies.sh
 ./install_build_dependencies.sh
-pip install -r inference-engine/ie_bridges/python/src/requirements-dev.txt
+pip3 install -r inference-engine/ie_bridges/python/src/requirements-dev.txt
 ```
 
 - For Mac. Please follow the official [guideline](https://github.com/openvinotoolkit/openvino/wiki/BuildingForMacOS) and also install [Brew](https://brew.sh/). 
@@ -40,7 +48,7 @@ pip install -r inference-engine/ie_bridges/python/src/requirements-dev.txt
 pip install -r inference-engine/ie_bridges/python/src/requirements-dev.txt
 ```
 
-Compile the source code with the Python option enabled.
+Compile the source code with the Python option enabled. It may take a few minute depending on your pc.
 
 ```
 export OPENVINO_BASEDIR=`pwd`
@@ -76,8 +84,10 @@ python -m ipykernel install --user --name openvino_env
 ```
 
 ### Step 3 - Setup PaddleDetection and Dependencies
-Note: please make sure you are in the openvino-paddlepaddle-demo directory.
+This step is required as we are going to export the static paddlepaddle model  from PaddlePaddle Open Model Zoo [PaddleDetection]( https://github.com/PaddlePaddle/PaddleDetection.git), and may also do inference with PaddlePaddle as well.
+
 ```sh
+# Note: please make sure you are in the openvino-paddlepaddle-demo directory.
 git clone https://github.com/PaddlePaddle/PaddleDetection.git
 cd PaddleDetection && git checkout release/2.1 && cd - 
 pip install paddlepaddle -i https://mirror.baidu.com/pypi/simple
