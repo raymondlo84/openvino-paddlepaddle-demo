@@ -1,6 +1,6 @@
 # 演示：OpenVINO如何支持PaddlePaddle
 
-[[English]](README.md)|[[简体中文]](README_CN.md)
+[[English]](README.md) | [[简体中文]](README_CN.md)
 
 本项目通过一些示例演示了如何通过OpenVINO运行PaddlePaddle模型。
 
