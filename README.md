@@ -1,5 +1,7 @@
 # OpenVINO PaddlePaddle Integration Demo Preview
 
+[EN](README.md)|[简体中文](README_CN.md)
+
 Note: The work presented in this repository is for demo and preview purposes only. 
 
 This repository provides a set of sample code that demostrate how to run PaddlePaddle models in OpenVINO. 
