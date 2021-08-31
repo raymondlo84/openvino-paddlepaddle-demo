@@ -118,6 +118,7 @@ MobilenetV3 Large - [notebooks/100-mobilenetv3](notebooks/100-mobilenetv3).
 Note: Please make sure you select the openvino_env as the Kernel in the Notebooks.
 
 ### References:
+- [OpenVINO Notebooks](https://github.com/openvinotoolkit/openvino_notebooks) - Great tutorials and simple pip install setup! (Recommended) 
 - [Compiling OpenVINO from Source](https://github.com/openvinotoolkit/openvino/wiki/BuildingCode)
 - [Converting a Paddle* Model]( https://github.com/openvinotoolkit/openvino/blob/35e6c51fc0871bade7a2c039a19d8f5af9a5ea9e/docs/MO_DG/prepare_model/convert_model/Convert_Model_From_Paddle.md)
 
