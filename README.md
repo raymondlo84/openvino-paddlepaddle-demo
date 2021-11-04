@@ -104,7 +104,7 @@ Enable the virtual environment, and also the OpenVINO environment. Then, execute
 ```sh 
 #For Linux and Mac
 source openvino_env/bin/activate
-source openvino/openvino_dist/bin/setupvars.sh
+source openvino/openvino_dist/setupvars.sh
 jupyter lab notebooks
 ```
 
