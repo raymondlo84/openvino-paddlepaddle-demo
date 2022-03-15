@@ -101,7 +101,7 @@ pip install --upgrade -r PaddleDetection/requirements.txt -i https://mirror.baid
 ```sh 
 #For Linux and Mac
 source openvino_env/bin/activate
-source openvino/openvino_dist/bin/setupvars.sh
+source openvino/openvino_dist/setupvars.sh
 jupyter lab notebooks
 ```
 
